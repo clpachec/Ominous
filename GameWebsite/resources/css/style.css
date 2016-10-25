@@ -182,8 +182,11 @@ sub {
 /* SECTIONS */
 /* ------------------------------------------------------*/
 
-
 .section-features {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/flashlight.jpg);
+}
+
+.section-charles {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/hallway.jpg);
 }
 
