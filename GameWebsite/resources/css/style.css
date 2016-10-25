@@ -1,3 +1,7 @@
+/* ------------------------------------------------------*/
+/* BASIC SETUP */
+/* ------------------------------------------------------*/
+
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +9,105 @@
 }
 
 html {
-    background-color: #fff;
-    color: #555;
+    background-color: #7f8c8d;
+    color: rgba(236, 240, 241, 0.5);
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility;
 }
+
+/* ------------------------------------------------------*/
+/* REUSABLE COMPONENTS */
+/* ------------------------------------------------------*/
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* ------ HEADINGS ------ */
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 600%;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+}
+
+/* ------ BUTTONS ------ */
+
+.btn:link, 
+.but:visited {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 300px;
+    transition: background-color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: rgba(127, 140, 141, 0.5);
+    border: 1px solid rgba(127, 140, 141, 0.5);
+    color: #ecf0f1;
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid rgba(127, 140, 141, 0.5);
+    color: #ecf0f1;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: rgba(127, 140, 141, 0.5);
+}
+
+/* ------------------------------------------------------*/
+/* HEADER */
+/* ------------------------------------------------------*/
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(img/house.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-text-box {
+    position: absolute;
+    top: 7%;
+    left: 3%;
+}
+
+sub {
+    font-size: 50%;
+    padding-left: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
