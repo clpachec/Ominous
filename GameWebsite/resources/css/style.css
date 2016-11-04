@@ -179,26 +179,70 @@ sub {
 }
 
 /* ------------------------------------------------------*/
+/* FEATUREs */
+/* ------------------------------------------------------*/
+
+.section-charles .long-copy {
+    margin-bottom: 30px;
+}
+
+
+/* ------------------------------------------------------*/
 /* SECTIONS */
 /* ------------------------------------------------------*/
 
-.section-features {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/flashlight.jpg);
-}
-
 .section-charles {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/hallway.jpg);
-}
-
-.section-artwork {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../img/empty-room.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/flashlight.jpg);
 }
 
 .section-gameplay {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/horse-room.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/hallway.jpg);
 }
 
+.section-artwork {
 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(img/empty-room.jpg);
+}
+
+.section-ominous {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/horse-room.jpg);
+}
+
+/* ------------------------------------------------------*/
+/* ARTWORK */
+/* ------------------------------------------------------*/
+
+.artwork-showcase {
+    list-style: none;
+    width: 100%
+        
+}
+
+.artwork-showcase li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.art-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.art-photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.art-photo img:hover {
+    opacity: 1;
+    transform: scale(1.03);
+}
 
 
 
