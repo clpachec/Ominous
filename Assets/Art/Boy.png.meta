@@ -1,0 +1,451 @@
+fileFormatVersion: 2
+guid: b88e99ef036c6a04aa491135c23215a5
+timeCreated: 1479425497
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Boy_0
+    21300002: Boy_1
+    21300004: Boy_2
+    21300006: Boy_3
+    21300008: Boy_4
+    21300010: Boy_5
+    21300012: Boy_6
+    21300014: Boy_7
+    21300016: Boy_8
+    21300018: Boy_9
+    21300020: Boy_10
+    21300022: Boy_11
+    21300024: Boy_12
+    21300026: Boy_13
+    21300028: Boy_14
+    21300030: Boy_15
+    21300032: Boy_16
+    21300034: Boy_17
+    21300036: Boy_18
+    21300038: Boy_19
+    21300040: Boy_20
+    21300042: Boy_21
+    21300044: Boy_22
+    21300046: Boy_23
+    21300048: Boy_24
+    21300050: Boy_25
+    21300052: Boy_26
+    21300054: Boy_27
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 286.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 286.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 286.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 246.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 246.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 246.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 206.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 206.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 206.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 166.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 166.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 166.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 126.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 126.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 126.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 86.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 86.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 86.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 46.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 46.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 46.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 46.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 6.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 6.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boy_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 6.125
+        width: 32
+        height: 40.875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
