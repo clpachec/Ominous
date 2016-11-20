@@ -9,7 +9,7 @@
 }
 
 html {
-    background-color: #7f8c8d;
+    background-color: #000;
     color: rgba(236, 240, 241, 0.5);
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
@@ -35,6 +35,34 @@ section {
 
 .box {
     padding: 1%;
+}
+
+.author-box {
+    padding: 25px;
+    margin-left: 20px;
+}
+
+.author-box img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+    margin-left: 30px;
+    opacity: 0.5;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.author-text {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-left: 0px;
+}
+
+.author-box img:hover {
+    opacity: 1;
+    transform: scale(1.03);
 }
 
 /* ------ HEADINGS ------ */
@@ -179,7 +207,7 @@ sub {
 }
 
 /* ------------------------------------------------------*/
-/* FEATUREs */
+/* FEATURES */
 /* ------------------------------------------------------*/
 
 .section-charles .long-copy {
