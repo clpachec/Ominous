@@ -38,7 +38,7 @@ section {
 }
 
 .author-box {
-    padding: 25px;
+    padding: 18px;
     margin-left: 20px;
 }
 
@@ -49,14 +49,14 @@ section {
     float: left;
     margin-right: 20px;
     margin-left: 30px;
-    opacity: 0.5;
+    opacity: 0.6;
     transform: scale(1.15);
     transition: transform 0.5s, opacity 0.5s;
 }
 
 .author-text {
-    font-size: 22px;
-    margin-top: 30px;
+    font-size: 25px;
+    margin-top: 10px;
     margin-left: 0px;
 }
 
@@ -113,6 +113,11 @@ h2:after {
 
 .box p {
     line-height: 145%;
+}
+
+.copyrights {
+    padding-top: 530px;
+    padding-left: 970px;
 }
 
 /* ------ ICONS ------ */
@@ -271,9 +276,6 @@ sub {
     opacity: 1;
     transform: scale(1.03);
 }
-
-
-
 
 
 
