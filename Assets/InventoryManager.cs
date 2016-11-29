@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour {
     public GameObject inventoryBox;
     bool inventoryBoxActive;
+
+    public Button key;
     // Use this for initialization
     void Start () {
 	
@@ -30,5 +33,11 @@ public class InventoryManager : MonoBehaviour {
     {
         inventoryBox.SetActive(false);
         inventoryBoxActive = false;
+    }
+
+    public void ActivateKey()
+    {
+        key.interactable = true;
+        key.GetComponentInChildren<Text>().text = "Key";
     }
 }
