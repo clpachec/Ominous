@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 
 public class TextManager : MonoBehaviour {
-	public GameObject textBox; 
-	public Text text_line; 
+	public GameObject textBox;
+    public GameObject keyPickupBox;
+    public Text text_line; 
 	public TextAsset textfile; 
 	public string[] sentences; 
 	public int current_line;
@@ -13,13 +14,14 @@ public class TextManager : MonoBehaviour {
 	public PlayerController player; 
 	public bool is_active;
 	public bool stop_playermove;
+    bool itemPickup = false;
+    public string itemNamePickUp;
     bool ignoreFirstPress = false;
     // Use this for initialization
+
     void Start () {
 		player = FindObjectOfType<PlayerController> ();
 	}
-
-
 	void Update()
 	{
 		if (!is_active)
@@ -41,13 +43,27 @@ public class TextManager : MonoBehaviour {
         if (current_line >= end_line)
         {
             DisableTextBox();
+            if (itemPickup && itemNamePickUp == "Key")
+            {
+                ActivateKeyPickup();
+            }
         }
     }
 
-    public void ActivateTextBox(TextAsset passedtextFile)
+    public void ActivateKeyPickup()
+    {
+        keyPickupBox.SetActive(true);
+    }
+
+    public void DeactivateKeyPickup()
+    {
+        keyPickupBox.SetActive(false);
+    }
+    public void ActivateTextBox(TextAsset passedtextFile, bool pickUp, string itemName)
     {
         if (passedtextFile != null)
         {
+            Debug.Log(passedtextFile.text.Split('\n')[0]);
             sentences = (passedtextFile.text.Split('\n'));
             current_line = 0;
             end_line = sentences.Length;
@@ -57,6 +73,8 @@ public class TextManager : MonoBehaviour {
                 is_active = true;
             }
             ignoreFirstPress = true;
+            itemPickup = pickUp;
+            itemNamePickUp = itemName;
             EnableTextBox();
         }
         

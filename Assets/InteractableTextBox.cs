@@ -8,6 +8,8 @@ public class InteractableTextBox : MonoBehaviour {
     public bool playerFacingDown = true;
     public bool playerFacingUp = true;
     public PlayerController player;
+    public bool pickUp = false;
+    public string itemName = "";
     TextManager textManager;
     // Use this for initialization
     void Start () {
@@ -31,7 +33,7 @@ public class InteractableTextBox : MonoBehaviour {
                    (player.directionFacing == "down" && playerFacingDown) ||
                    (player.directionFacing == "up" && playerFacingUp))
                 {
-                    textManager.ActivateTextBox(textFile);
+                    textManager.ActivateTextBox(textFile, pickUp, itemName);
                 }
             }
         }
