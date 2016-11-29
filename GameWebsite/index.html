@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
         <title>Ominous Home Page</title>
         <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
         <link rel="stylesheet" type="text/css" href="resources/css/style.css">
         <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
@@ -17,28 +17,27 @@
             <nav>
                 <div class="row">
                     <ul class="main-nav">
-                        <li><a href="#">Charles</a></li>
-                        <li><a href="#">Gameplay</a></li>
-                        <li><a href="#">Artwork</a></li>
-                        <li><a href="#">Ominous</a></li>
+                        <li><a href="#charles">Charles</a></li>
+                        <li><a href="#media">Gameplay</a></li>
+                        <li><a href="#art">Artwork</a></li>
+                        <li><a href="#credits">Ominous</a></li>
                     </ul>
                 </div>
             </nav>
             <div class="hero-text-box">
                 <h1>Charles<sub>by Ominous</sub></h1>
-                <a class="btn btn-full" href="#">Who is Charles?</a>
-                <a class="btn btn-ghost" href="#">Show me more</a>
+                <a class="btn btn-full js--scroll-to-charles" href="#">Who is Charles?</a>
+                <a class="btn btn-ghost js--scroll-to-gameplay" href="#">Show me more</a>
             </div>
         </header>
-        
-        <section class="section-charles">
+        <section class="section-charles js--section-charles" id="charles">
             <div class="row">
                 <h2>Charles</h2>
                 <P class = "long-copy">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur.
                 </P>
             </div>
-            <div class = "row">
+            <div class = "row js--wp-1">
                 <div class = "col span-1-of-4 box">
                     <i class = "ion-ios-infinite icon-big"></i>
                     <h3>Infinity</h3>
@@ -65,64 +64,64 @@
                 </div>
             </div>
         </section>
-        <section class = "section-gameplay">
+        <section class = "section-gameplay js--section-gameplay" id="media">
             <div class = "row">
-                <h2>Gameplay</h2>
+                <h2 class="js--wp-2">Peek into the World of Charles</h2>
             </div>
         </section>
-        <section class = "section-artwork">
+        <section class = "section-artwork" id="art">
             <ul class = "artwork-showcase">
                 <li>
-                    <figure class = "art-photo">
+                    <figure class = "art-photo js--wp-3">
                         <img src = "resources/img/shadow.jpg" alt = "Shadow">
                     </figure>
                 </li>
                 <li>
-                    <figure class = "art-photo">
+                    <figure class = "art-photo js--wp-3">
                         <img src = "resources/img/shadow.jpg" alt = "Shadow">
                     </figure>
                 </li>
                 <li>
-                    <figure class = "art-photo">
+                    <figure class = "art-photo js--wp-4">
                         <img src = "resources/img/shadow.jpg" alt = "Shadow">
                     </figure>
                 </li>
                 <li>
-                    <figure class = "art-photo">
+                    <figure class = "art-photo js--wp-4">
                         <img src = "resources/img/shadow.jpg" alt = "Shadow">
                     </figure>
                 </li>
             </ul>
             <ul class = "artwork-showcase">
                 <li>
-                    <figure class = "art-photo">
+                    <figure class = "art-photo js--wp-3">
                         <img src = "resources/img/shadow.jpg" alt = "Shadow">
                     </figure>
                 </li>
                 <li>
-                    <figure class = "art-photo">
+                    <figure class = "art-photo js--wp-3">
                         <img src = "resources/img/shadow.jpg" alt = "Shadow">
                     </figure>
                 </li>
                 <li>
-                    <figure class = "art-photo">
+                    <figure class = "art-photo js--wp-4">
                         <img src = "resources/img/shadow.jpg" alt = "Shadow">
                     </figure>
                 </li>
                 <li>
-                    <figure class = "art-photo">
+                    <figure class = "art-photo js--wp-4">
                         <img src = "resources/img/shadow.jpg" alt = "Shadow">
                     </figure>
                 </li>
             </ul>
         </section>
-        <section class = "section-ominous">
+        <section class = "section-ominous" id="credits">
             <div class = "row">
                 <h2>The Developers of Charles</h2>
             </div>
             <div>
                 <div clss="row">
-                    <div class = "col span-1-of-2 box">
+                    <div class = "col span-1-of-2 box js--wp-5">
                         <div class="author-box">
                             <img src="resources/css/img/carl.jpg" alt="Carl Pacheco Photo">
                             <p class="author-text">Carl Pacheco</p>
@@ -145,7 +144,7 @@
                             <p>&mdash; Game Developer</p>
                         </div>
                     </div>
-                    <div class = "col span-1-of-2 box">
+                    <div class = "col span-1-of-2 box js--wp-5">
                         <div class="author-box">
                             <img src="resources/css/img/james.jpg" alt="James Hardjadinata Photo">
                             <p class="author-text">James Hardjadinata</p>
@@ -166,6 +165,7 @@
             <p class="copyrights">Copyright &copy; 2016 by Ominous. All rights reserved.</p>
         </section>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="vendors/js/jquery.waypoints.min.js"></script>
         <script src="resources/js/script.js"></script>
     </body>
 </html>

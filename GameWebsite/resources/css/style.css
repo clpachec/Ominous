@@ -183,6 +183,7 @@ header {
 
 }
 
+/* Main navi */
 .main-nav {
     float: right;
     list-style: none;
@@ -217,6 +218,28 @@ header {
 sub {
     font-size: 50%;
     padding-left: 8px;
+}
+
+/* Sticky navi */
+.sticky {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.98);
+    box-shadow: 0 2px 2px #393939;
+    z-index: 9999;
+}
+
+.main-nav {
+    margin-top: 18px;
+    margin-bottom: 15px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 15px 0;
+    color: #ecf0f1;
 }
 
 /* ------------------------------------------------------*/
@@ -295,16 +318,19 @@ sub {
     transform: scale(1.03);
 }
 
+/* ------------------------------------------------------*/
+/* ANIMATIONS */
+/* ------------------------------------------------------*/
+.js--wp-1,
+.js--wp-3,
+.js--wp-4
+{
+    opacity:0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.js--wp-1.animated,
+.js--wp-3.animated,
+.js--wp-4.animated
+{
+    opacity:1;
+}
