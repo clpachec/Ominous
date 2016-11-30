@@ -9,7 +9,7 @@
 }
 
 html {
-    background-color: #7f8c8d;
+    background-color: #000;
     color: rgba(236, 240, 241, 0.5);
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
@@ -35,6 +35,39 @@ section {
 
 .box {
     padding: 1%;
+}
+
+.author-box {
+    padding: 13px;
+    margin-left: 20px;
+}
+
+.author-box img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+    margin-left: 30px;
+    opacity: 0.6;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+
+.author-text {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+.author-box img:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 /* ------ HEADINGS ------ */
@@ -87,6 +120,11 @@ h2:after {
     line-height: 145%;
 }
 
+.copyrights {
+    padding-top: 510px;
+    padding-left: 970px;
+}
+
 /* ------ ICONS ------ */
 .icon-big {
     font-size: 350%;
@@ -103,6 +141,7 @@ h2:after {
     font-weight: 300;
     text-decoration: none;
     border-radius: 300px;
+    -webkit-transition: background-color 0.2s;
     transition: background-color 0.2s;
 }
 
@@ -130,6 +169,7 @@ h2:after {
 /* ------------------------------------------------------*/
 
 header {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(img/house.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(img/house.jpg);
     height: 100vh;
     background-size: cover;
@@ -143,6 +183,7 @@ header {
 
 }
 
+/* Main navi */
 .main-nav {
     float: right;
     list-style: none;
@@ -162,6 +203,7 @@ header {
     text-transform: uppercase;
     font-size: 90%;
     border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
 }
 
@@ -178,8 +220,30 @@ sub {
     padding-left: 8px;
 }
 
+/* Sticky navi */
+.sticky {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.98);
+    box-shadow: 0 2px 2px #393939;
+    z-index: 9999;
+}
+
+.main-nav {
+    margin-top: 18px;
+    margin-bottom: 15px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 15px 0;
+    color: #ecf0f1;
+}
+
 /* ------------------------------------------------------*/
-/* FEATUREs */
+/* FEATURES */
 /* ------------------------------------------------------*/
 
 .section-charles .long-copy {
@@ -192,19 +256,24 @@ sub {
 /* ------------------------------------------------------*/
 
 .section-charles {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/flashlight.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/flashlight.jpg);
 }
 
 .section-gameplay {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/hallway.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/hallway.jpg);
 }
 
 .section-artwork {
 
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(img/empty-room.jpg);
+
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(img/empty-room.jpg);
 }
 
 .section-ominous {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/horse-room.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/horse-room.jpg);
 }
 
@@ -235,28 +304,33 @@ sub {
     opacity: 0.7;
     width: 100%;
     height: auto;
+    -webkit-transform: scale(1.15);
     transform: scale(1.15);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
     transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
 .art-photo img:hover {
     opacity: 1;
+    -webkit-transform: scale(1.03);
     transform: scale(1.03);
 }
 
+/* ------------------------------------------------------*/
+/* ANIMATIONS */
+/* ------------------------------------------------------*/
+.js--wp-1,
+.js--wp-3,
+.js--wp-4
+{
+    opacity:0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.js--wp-1.animated,
+.js--wp-3.animated,
+.js--wp-4.animated
+{
+    opacity:1;
+}
