@@ -1,0 +1,66 @@
+/* Big tablet to 1200px: from 1023px to 1200px */
+@media only screen and (max-width: 1200px) {
+    .hero-text-box {
+        width: 100%;
+        padding: 0 2%;
+    }
+    
+    .row { padding: 0 2%; }
+}
+
+/* Small tablet to big tablet: from 767px to 1023px */
+@media only screen and (max-width: 1023px) {
+    body { font-size: 18px; }
+    section { padding: 60px 0; }
+    
+    .long-copy {
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    .steps-box { margin-top: 10px; }
+    .steps-box:last-child { margin-top: 10px; }
+    .works-steps { margin-bottom: 40px; }
+    .works-step:last-of-type { margin-bottom: 60px; }
+    
+    .app-screen { width: 50%; }
+    
+    .author-box {
+        padding: 18px;
+        margin-left: 20px;
+    }
+
+    .author-box img {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        float: left;
+        margin-right: 20px;
+        margin-left: 30px;
+        opacity: 0.6;
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+        -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+        transition: opacity 0.5s, -webkit-transform 0.5s;
+        transition: transform 0.5s, opacity 0.5s;
+        transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+    }
+
+    .author-text {
+        font-size: 18px;
+        margin-top: 5px;
+        margin-left: 0px;
+    }
+}
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    
+}
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+    
+}
+
+
