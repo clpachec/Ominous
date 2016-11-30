@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TextManager : MonoBehaviour {
 	public GameObject textBox;
     public GameObject keyPickupBox;
+    public GameObject flashlightPickupBox;
     public Text text_line; 
 	public TextAsset textfile; 
 	public string[] sentences; 
@@ -47,6 +48,8 @@ public class TextManager : MonoBehaviour {
             {
                 ActivateKeyPickup();
             }
+            else if (itemPickup && itemNamePickUp == "Flashlight")
+                ActivateFlashlightPickup();
         }
     }
 
@@ -58,6 +61,11 @@ public class TextManager : MonoBehaviour {
     public void DeactivateKeyPickup()
     {
         keyPickupBox.SetActive(false);
+    }
+
+    public void ActivateFlashlightPickup()
+    {
+        flashlightPickupBox.SetActive(true);
     }
     public void ActivateTextBox(TextAsset passedtextFile, bool pickUp, string itemName)
     {

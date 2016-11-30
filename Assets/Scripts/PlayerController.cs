@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour {
         myRigidbody.AddForce(knockback);
     }
 
-    void setDarkness()
+    public void setDarkness()
     {
         Color tmp = flashLight.GetChild(0).GetComponent<SpriteRenderer>().color;
         tmp.a = darkness;
