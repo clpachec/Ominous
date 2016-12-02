@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
-    float attackPower;
+    public int attackPower = 10;
     public float health = 10;
     public float knockback = 100;
     public float movementSpeed = 5;
@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour {
     bool dead = false;
     bool canAttack = true;
     Vector3 distance;
-
+    public ParticleSystem damageParticle;
     // Use this for initialization
     void Start () {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -96,6 +96,7 @@ public class Enemy : MonoBehaviour {
     public void damageEnemy(float damage)
     {
         health -= damage;
+        damageParticle.Play();
     }
 
     public void movementOn()

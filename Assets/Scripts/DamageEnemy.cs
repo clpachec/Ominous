@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class DamageEnemy : MonoBehaviour {
 
     HashSet<GameObject> enemyHash = new HashSet<GameObject>();
-
+    public float slowDownEnemy = 5;
 	// Use this for initialization
 	void Start () {
         //Invoke when you start your flash light
@@ -21,6 +21,7 @@ public class DamageEnemy : MonoBehaviour {
     {
         if (col.gameObject.tag == "Enemy")
         {
+            col.gameObject.GetComponent<Enemy>().movementSpeed /= slowDownEnemy;
             if (!enemyHash.Contains(col.gameObject))
                 enemyHash.Add(col.gameObject);
         }
@@ -30,6 +31,7 @@ public class DamageEnemy : MonoBehaviour {
     {
         if (col.gameObject.tag == "Enemy")
         {
+            col.gameObject.GetComponent<Enemy>().movementSpeed *= slowDownEnemy;
             if (enemyHash.Contains(col.gameObject))
                 enemyHash.Remove(col.gameObject);
         }
@@ -39,8 +41,7 @@ public class DamageEnemy : MonoBehaviour {
     {
         foreach(GameObject target in enemyHash)
         {
-            //Debug.Log("How much?");
-            target.GetComponent<Animator>().SetTrigger("stun");
+            //target.GetComponent<Animator>().SetTrigger("stun");
             target.GetComponent<Enemy>().damageEnemy(1);
         }
     }
