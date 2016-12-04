@@ -71,7 +71,6 @@ public class TextManager : MonoBehaviour {
     {
         if (passedtextFile != null)
         {
-            Debug.Log(passedtextFile.text.Split('\n')[0]);
             sentences = (passedtextFile.text.Split('\n'));
             current_line = 0;
             end_line = sentences.Length;

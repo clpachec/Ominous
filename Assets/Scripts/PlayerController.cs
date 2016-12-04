@@ -1,18 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
+
+
+    public int health = 100;
     public float maxSpeed = 9f;
     public float darkness = 0.8f;
+    public float healthRecoveryTime = .5f;          //Time intervals which health is added
+    public float recoveryDelay = 1f;                //Time before starting to recover again after a hit
     public bool disableFlashLight = false;
     public string directionFacing;
-
+    bool canMove = true;
+    int fullHealth;
     float moveX, moveY;
 
     Animator myAnimator;
     Rigidbody2D myRigidbody;
 
     Transform flashLight, noFlashLight;
+
+    GameObject bloodSplatterEffect;
+    GameObject gameOverScreen;
 
     bool flashLightInUse = false;
     // Use this for initialization
@@ -22,19 +32,28 @@ public class PlayerController : MonoBehaviour {
         myAnimator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         setDarkness();
+
+        fullHealth = health;
+        bloodSplatterEffect = GameObject.FindGameObjectWithTag("Blood Splatter");
+        gameOverScreen = GameObject.FindGameObjectWithTag("Game Over");
+
+        ApplyBloodSplatterEffect();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !disableFlashLight)
+        if (canMove)
         {
-            if (flashLightInUse)
-                DisableFlashLight();
-            else
-                EnableFlashLight();
+            if (Input.GetMouseButtonDown(0) && !disableFlashLight)
+            {
+                if (flashLightInUse)
+                    DisableFlashLight();
+                else
+                    EnableFlashLight();
+            }
+            moveX = Input.GetAxis("Horizontal");    //Get input for x-axis
+            moveY = Input.GetAxis("Vertical");      //Get input for y-axis
         }
-        moveX = Input.GetAxis("Horizontal");    //Get input for x-axis
-        moveY = Input.GetAxis("Vertical");      //Get input for y-axis
     }
     // Update is called once per frame
     void FixedUpdate() {
@@ -47,8 +66,20 @@ public class PlayerController : MonoBehaviour {
             myAnimator.enabled = false;
         else
             myAnimator.enabled = true;
+        if(health <= 0)
+        {
+            activateDeath();
+        }
     }
 
+    void activateDeath()
+    {
+        if (gameOverScreen)
+        {
+            canMove = false;
+            gameOverScreen.GetComponent<Animator>().SetTrigger("Fade");
+        }
+    }
     void changeDirectionFacing(string direction)
     {//use left, right, up, down
         directionFacing = direction;
@@ -68,9 +99,27 @@ public class PlayerController : MonoBehaviour {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 
-    public void TakeDamage(float attackPower, Vector3 knockback)
+    public void TakeDamage(int attackPower, Vector3 knockback)
     {
-        myRigidbody.AddForce(knockback);
+        CancelInvoke("RecoverHealth");
+        InvokeRepeating("RecoverHealth", recoveryDelay, healthRecoveryTime);
+        health -= attackPower;
+        ApplyBloodSplatterEffect();
+        //myRigidbody.AddForce(knockback);
+    }
+
+    void ApplyBloodSplatterEffect()
+    {
+        if (bloodSplatterEffect != null && health < fullHealth)
+        {
+            float alpha = (float)(fullHealth - health) / 100f;
+
+            if (fullHealth - (fullHealth - health) <= 10)
+                alpha = 1.0f;
+            bloodSplatterEffect.GetComponent<Image>().color = new Color(1f, 1f, 1f, alpha);
+        }
+        else if(bloodSplatterEffect != null)
+            bloodSplatterEffect.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
     }
 
     public void setDarkness()
@@ -96,5 +145,17 @@ public class PlayerController : MonoBehaviour {
         flashLight.gameObject.SetActive(false);
         noFlashLight.gameObject.SetActive(true);
         flashLightInUse = false;
+    }
+
+    void RecoverHealth()
+    {
+        health++;
+        ApplyBloodSplatterEffect();
+        if (health >= fullHealth)
+        {
+            health = fullHealth;
+            
+            CancelInvoke("RecoverHealth");
+        }
     }
 }
