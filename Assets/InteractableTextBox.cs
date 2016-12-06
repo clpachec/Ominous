@@ -10,6 +10,8 @@ public class InteractableTextBox : MonoBehaviour {
     public PlayerController player;
     public bool pickUp = false;
     public string itemName = "";
+    public bool seeOnce;
+    public GameObject remove;
     TextManager textManager;
     // Use this for initialization
     void Start () {
@@ -34,6 +36,11 @@ public class InteractableTextBox : MonoBehaviour {
                    (player.directionFacing == "up" && playerFacingUp))
                 {
                     textManager.ActivateTextBox(textFile, pickUp, itemName);
+                    if (seeOnce)
+                    {
+                        remove.SetActive(false);
+                        gameObject.SetActive(false);
+                    }
                 }
             }
         }
