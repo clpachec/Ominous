@@ -2,14 +2,14 @@
 using System.Collections;
 
 public class ChangePosition : StateMachineBehaviour {
-    public Vector3 changeLocation;
-    public GameObject player;
-    public float darkness;
-	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    PositionData data;
+    GameObject player;
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Transform>().position = changeLocation;
-        player.GetComponent<PlayerController>().darkness = darkness;
+        data = animator.transform.GetComponent<PositionData>();
+        player.GetComponent<Transform>().position = data.changeLocation;
+        player.GetComponent<PlayerController>().darkness = data.darkness;
         player.GetComponent<PlayerController>().setDarkness();
     }
 
