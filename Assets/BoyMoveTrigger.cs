@@ -25,7 +25,7 @@ public class BoyMoveTrigger : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-        Debug.Log(walk);
+        //Debug.Log(walk);
         if (walk)
         {
             if (up) {
