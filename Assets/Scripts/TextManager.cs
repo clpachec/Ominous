@@ -7,6 +7,8 @@ public class TextManager : MonoBehaviour {
 	public GameObject textBox;
     public GameObject keyPickupBox;
     public GameObject gluePickupBox;
+    public GameObject crackPaintingPickupBox;
+    public GameObject paintingPickupBox;
 
     public GameObject flashlightPickupBox;
     public Text text_line; 
@@ -52,6 +54,10 @@ public class TextManager : MonoBehaviour {
             }
             else if (itemPickup && itemNamePickUp == "Flashlight")
                 ActivateFlashlightPickup();
+            else if (itemPickup && itemNamePickUp == "Crack Painting")
+                ActivateCrackPaintingPickup();
+            else if (itemPickup && itemNamePickUp == "Painting")
+                ActivatePaintingPickup();
             else if (itemPickup && itemNamePickUp == "Glue")
                 ActivateGluePickup();
         }
@@ -67,6 +73,15 @@ public class TextManager : MonoBehaviour {
         gluePickupBox.SetActive(true);
     }
 
+    public void ActivateCrackPaintingPickup()
+    {
+        crackPaintingPickupBox.SetActive(true);
+    }
+
+    public void ActivatePaintingPickup()
+    {
+        paintingPickupBox.SetActive(true);
+    }
 
     public void DeactivateKeyPickup()
     {
