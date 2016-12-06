@@ -12,7 +12,11 @@ public class LoadSceneAnimator : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        LoadAnimator.SetTrigger("Fade");
-        GetComponent<AudioSource>().Play();
+        if (other.tag == "Player")
+        {
+            LoadAnimator.SetTrigger("Fade");
+            if (GetComponent<AudioSource>())
+                GetComponent<AudioSource>().Play();
+        }
     }
 }
