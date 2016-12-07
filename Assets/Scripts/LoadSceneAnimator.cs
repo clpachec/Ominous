@@ -14,6 +14,7 @@ public class LoadSceneAnimator : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            other.GetComponent<PlayerController>().canMove = false;
             LoadAnimator.SetTrigger("Fade");
             if (GetComponent<AudioSource>())
                 GetComponent<AudioSource>().Play();

@@ -9,7 +9,7 @@ public class InteractableTextBox : MonoBehaviour {
     public bool playerFacingUp = true;
     public PlayerController player;
     public bool pickUp = false;
-    public string itemName = "";
+    public GameObject itemButton;
     public bool seeOnce;
     public GameObject remove;
     TextManager textManager;
@@ -31,7 +31,7 @@ public class InteractableTextBox : MonoBehaviour {
                    (player.directionFacing == "down" && playerFacingDown) ||
                    (player.directionFacing == "up" && playerFacingUp))
                 {
-                    textManager.ActivateTextBox(textFile, pickUp, itemName, gameObject);
+                    textManager.ActivateTextBox(textFile, pickUp, itemButton, gameObject);
                     if (seeOnce)
                     {
                         remove.SetActive(false);

@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
     public float recoveryDelay = 1f;                //Time before starting to recover again after a hit
     public bool disableFlashLight = false;
     public string directionFacing;
-    bool canMove = true;
+    public bool canMove = true;
     int fullHealth;
     float moveX, moveY;
 
@@ -54,6 +54,11 @@ public class PlayerController : MonoBehaviour {
             moveX = Input.GetAxis("Horizontal");    //Get input for x-axis
             moveY = Input.GetAxis("Vertical");      //Get input for y-axis
         }
+        else
+        {
+            moveX = 0;
+            moveY = 0;
+        }
     }
     // Update is called once per frame
     void FixedUpdate() {
@@ -78,6 +83,10 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    public void moveActive()
+    {
+        canMove = true;
+    }
     void activateDeath()
     {
         if (gameOverScreen)

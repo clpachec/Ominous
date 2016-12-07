@@ -5,22 +5,19 @@ using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour {
 	public GameObject textBox;
-    public GameObject keyPickupBox;
-    public GameObject gluePickupBox;
-    public GameObject crackPaintingPickupBox;
-    public GameObject paintingPickupBox;
 
-    public GameObject flashlightPickupBox;
-    public Text text_line; 
-	public TextAsset textfile; 
-	public string[] sentences; 
-	public int current_line;
-	public int end_line;
-	public PlayerController player; 
-	public bool is_active;
-	public bool stop_playermove;
-    bool itemPickup = false;
-    public string itemNamePickUp;
+
+
+    PlayerController player;
+    GameObject itemButtonBox;
+    Text text_line;
+    string[] sentences;
+
+    int current_line;
+    int end_line;
+
+    bool is_active;
+    bool isItemPickup = false;
     bool ignoreFirstPress = false;
 
     GameObject interactable;
@@ -28,7 +25,8 @@ public class TextManager : MonoBehaviour {
 
     void Start () {
 		player = FindObjectOfType<PlayerController> ();
-	}
+        text_line = textBox.transform.GetChild(0).GetComponent<Text>();
+    }
 	void Update()
 	{
 		if (!is_active)
@@ -50,59 +48,18 @@ public class TextManager : MonoBehaviour {
         if (current_line >= end_line)
         {
             DisableTextBox();
-            
-            if (itemPickup && itemNamePickUp == "Key")
-            {
-                ActivateKeyPickup();
-            }
-            else if (itemPickup && itemNamePickUp == "Flashlight")
-                ActivateFlashlightPickup();
-            else if (itemPickup && itemNamePickUp == "Crack Painting")
-                ActivateCrackPaintingPickup();
-            else if (itemPickup && itemNamePickUp == "Painting")
-                ActivatePaintingPickup();
-            else if (itemPickup && itemNamePickUp == "Glue")
-                ActivateGluePickup();
 
-            interactable.SetActive(true);
+            if (isItemPickup)
+                itemButtonBox.SetActive(true);
         }
     }
 
-    public void ActivateKeyPickup()
-    {
-        keyPickupBox.SetActive(true);
-    }
-
-    public void ActivateGluePickup()
-    {
-        gluePickupBox.SetActive(true);
-    }
-
-    public void ActivateCrackPaintingPickup()
-    {
-        crackPaintingPickupBox.SetActive(true);
-    }
-
-    public void ActivatePaintingPickup()
-    {
-        paintingPickupBox.SetActive(true);
-    }
-
-    public void DeactivateKeyPickup()
-    {
-        keyPickupBox.SetActive(false);
-    }
-
-    public void ActivateFlashlightPickup()
-    {
-        flashlightPickupBox.SetActive(true);
-    }
-    public void ActivateTextBox(TextAsset passedtextFile, bool pickUp, string itemName, GameObject passedInteractable)
+    public void ActivateTextBox(TextAsset passedtextFile, bool pickUp, GameObject passedItemButton, GameObject passedInteractable)
     {
         if (passedtextFile != null)
         {
+            itemButtonBox = passedItemButton;
             interactable = passedInteractable;
-            interactable.SetActive(false);
             sentences = (passedtextFile.text.Split('\n'));
             current_line = 0;
             end_line = sentences.Length;
@@ -112,20 +69,23 @@ public class TextManager : MonoBehaviour {
                 is_active = true;
             }
             ignoreFirstPress = true;
-            itemPickup = pickUp;
-            itemNamePickUp = itemName;
+            isItemPickup = pickUp;
             EnableTextBox();
         }
         
     }
 
 	public void EnableTextBox(){
-		textBox.SetActive (true);
+        player.canMove = false;
+        textBox.SetActive (true);
+        interactable.SetActive(false);
     }
 
-	public void DisableTextBox(){
-		textBox.SetActive (false);
+    public void DisableTextBox(){
+        player.canMove = true;
+        textBox.SetActive (false);
         is_active = false;
+        interactable.SetActive(true);
     }
 
 }
