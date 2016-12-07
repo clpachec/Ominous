@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AdditionalScript : MonoBehaviour {
+    public TextAsset textFile;
+    TextManager textManager;
 
-	// Use this for initialization
-	void Start () {
+    public bool activateEvent;
+    public GameObject eventObject;
+
+    GameObject itemButton;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -13,4 +19,9 @@ public class AdditionalScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void activateDialogue()
+    {
+
+    }
 }
