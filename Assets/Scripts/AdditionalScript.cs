@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class AdditionalScript : MonoBehaviour {
     public TextAsset textFile;
+    public bool activateObject;
+    public GameObject objectToSetActive;
+    public GameObject objectToRemove;
+
     TextManager textManager;
-
-    public bool activateEvent;
-    public GameObject eventObject;
-
     GameObject itemButton;
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        textManager = FindObjectOfType<TextManager>();
+    }
 
-    void activateDialogue()
+    public void activateDialogue()
     {
-
+        textManager.ActivateTextBox(textFile, activateObject, objectToSetActive, gameObject);
+        if (objectToRemove)
+            objectToRemove.SetActive(false);
     }
 }

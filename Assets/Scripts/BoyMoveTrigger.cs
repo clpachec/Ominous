@@ -14,11 +14,14 @@ public class BoyMoveTrigger : MonoBehaviour {
     public bool right = false;
     bool beenTrigger = false;
     bool walk = false;
+    public bool boyNotActive = false;
 
     Rigidbody2D boyRigidbody;
     Animator boyAnimator;
     // Use this for initialization
     void Start () {
+        if(boyNotActive)
+            boy.gameObject.SetActive(true);
         boyRigidbody = boy.GetComponent<Rigidbody2D>();
         boyAnimator = boy.GetComponent<Animator>();
     }
