@@ -59,7 +59,13 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate() {
         if(flashLight)
             RotateCharacter(moveX, moveY);
-        myRigidbody.velocity = new Vector2(moveX * maxSpeed, moveY * maxSpeed);
+        //myRigidbody.velocity = new Vector2(moveX * maxSpeed, moveY * maxSpeed);
+
+        var x = moveX * Time.deltaTime * maxSpeed;
+        var y = moveY * Time.deltaTime * maxSpeed;
+
+        transform.Translate(x, y, 0);
+
         myAnimator.SetFloat("walkX", moveX);
         myAnimator.SetFloat("walkY", moveY);
         if (moveX == 0 && moveY == 0)

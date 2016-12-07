@@ -22,6 +22,8 @@ public class TextManager : MonoBehaviour {
     bool itemPickup = false;
     public string itemNamePickUp;
     bool ignoreFirstPress = false;
+
+    GameObject interactable;
     // Use this for initialization
 
     void Start () {
@@ -48,6 +50,7 @@ public class TextManager : MonoBehaviour {
         if (current_line >= end_line)
         {
             DisableTextBox();
+            
             if (itemPickup && itemNamePickUp == "Key")
             {
                 ActivateKeyPickup();
@@ -60,6 +63,8 @@ public class TextManager : MonoBehaviour {
                 ActivatePaintingPickup();
             else if (itemPickup && itemNamePickUp == "Glue")
                 ActivateGluePickup();
+
+            interactable.SetActive(true);
         }
     }
 
@@ -92,10 +97,12 @@ public class TextManager : MonoBehaviour {
     {
         flashlightPickupBox.SetActive(true);
     }
-    public void ActivateTextBox(TextAsset passedtextFile, bool pickUp, string itemName)
+    public void ActivateTextBox(TextAsset passedtextFile, bool pickUp, string itemName, GameObject passedInteractable)
     {
         if (passedtextFile != null)
         {
+            interactable = passedInteractable;
+            interactable.SetActive(false);
             sentences = (passedtextFile.text.Split('\n'));
             current_line = 0;
             end_line = sentences.Length;

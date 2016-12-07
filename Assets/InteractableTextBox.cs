@@ -13,6 +13,7 @@ public class InteractableTextBox : MonoBehaviour {
     public bool seeOnce;
     public GameObject remove;
     TextManager textManager;
+    bool entered = false;
     // Use this for initialization
     void Start () {
         player = FindObjectOfType<PlayerController>();
@@ -21,21 +22,16 @@ public class InteractableTextBox : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-	    
-	}
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
+        if (entered)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if((player.directionFacing == "left" && playerFacingLeft) ||
+                if ((player.directionFacing == "left" && playerFacingLeft) ||
                    (player.directionFacing == "right" && playerFacingRight) ||
                    (player.directionFacing == "down" && playerFacingDown) ||
                    (player.directionFacing == "up" && playerFacingUp))
                 {
-                    textManager.ActivateTextBox(textFile, pickUp, itemName);
+                    textManager.ActivateTextBox(textFile, pickUp, itemName, gameObject);
                     if (seeOnce)
                     {
                         remove.SetActive(false);
@@ -43,6 +39,22 @@ public class InteractableTextBox : MonoBehaviour {
                     }
                 }
             }
+        }
+	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            entered = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            entered = false;
         }
     }
 }
