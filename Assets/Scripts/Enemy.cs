@@ -108,5 +108,10 @@ public class Enemy : MonoBehaviour {
     {
         canMove = false;
     }
+
+    public void deactivateEnemy()
+    {
+        gameObject.SetActive(false);
+    }
     //NOTE: Might change for efficiency issue
 }
