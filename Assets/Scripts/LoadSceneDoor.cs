@@ -16,7 +16,7 @@ public class LoadSceneDoor : MonoBehaviour {
         if (other.tag == "Player")
         {
             other.GetComponent<PlayerController>().canMove = false;
-            GetComponent<Animator>().SetTrigger("open");
+            GetComponent<Animator>().SetTrigger("Open");
             GetComponent<AudioSource>().Play();
             Invoke("LoadScene", 1);
         }

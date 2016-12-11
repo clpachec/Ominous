@@ -4,13 +4,11 @@ using UnityEngine.UI;
 
 
 public class TextManager : MonoBehaviour {
-	public GameObject textBox;
-
-
-
     PlayerController player;
     GameObject itemButtonBox;
     Text text_line;
+    Animator myAnimator;
+
     string[] sentences;
 
     int current_line;
@@ -24,8 +22,9 @@ public class TextManager : MonoBehaviour {
     // Use this for initialization
 
     void Start () {
-		player = FindObjectOfType<PlayerController> ();
-        text_line = textBox.transform.GetChild(0).GetComponent<Text>();
+        myAnimator = GetComponent<Animator>();
+        player = FindObjectOfType<PlayerController> ();
+        text_line = transform.GetChild(0).GetComponent<Text>();
     }
 	void Update()
 	{
@@ -77,13 +76,13 @@ public class TextManager : MonoBehaviour {
 
 	public void EnableTextBox(){
         player.canMove = false;
-        textBox.SetActive (true);
+        myAnimator.SetTrigger("Open");
         interactable.SetActive(false);
     }
 
     public void DisableTextBox(){
         player.canMove = true;
-        textBox.SetActive (false);
+        myAnimator.SetTrigger("Close");
         is_active = false;
         interactable.SetActive(true);
     }
