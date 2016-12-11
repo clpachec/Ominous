@@ -3,13 +3,14 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour {
-    public GameObject inventoryBox;
     bool inventoryBoxActive;
     PlayerController player;
+    Animator myAnimator;
 
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        myAnimator = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update () {
@@ -24,14 +25,14 @@ public class InventoryManager : MonoBehaviour {
 
     public void EnableInventoryBox()
     {
-        inventoryBox.SetActive(true);
+        myAnimator.SetTrigger("Open");
         inventoryBoxActive = true;
         player.canMove = false;
     }
 
     public void DisableInventoryBox()
     {
-        inventoryBox.SetActive(false);
+        myAnimator.SetTrigger("Close");
         inventoryBoxActive = false;
         player.canMove = true;
     }
