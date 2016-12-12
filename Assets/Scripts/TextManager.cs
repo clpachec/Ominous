@@ -9,14 +9,13 @@ public class TextManager : MonoBehaviour {
     Text text_line;
     Animator myAnimator;
 
-    string[] sentences;
+    public string[] sentences;
 
-    int current_line;
-    int end_line;
+    public int current_line;
+    public int end_line;
 
-    bool is_active;
+    public bool is_active;
     bool isItemPickup = false;
-    bool ignoreFirstPress = false;
 
     GameObject interactable;
     // Use this for initialization
@@ -30,19 +29,12 @@ public class TextManager : MonoBehaviour {
 	{
 		if (!is_active)
 			return; 
-		if (Input.GetKeyDown (KeyCode.Space) && !ignoreFirstPress) {
+		if (Input.GetKeyDown (KeyCode.Space))
             AdvanceLine();
-        }
-        else
-        {
-            ignoreFirstPress = false;
-        }
 	}
 
     void AdvanceLine()
     {
-        if (current_line < sentences.Length)
-            text_line.text = sentences[current_line];
         current_line += 1;
         if (current_line >= end_line)
         {
@@ -51,6 +43,9 @@ public class TextManager : MonoBehaviour {
             if (isItemPickup)
                 itemButtonBox.SetActive(true);
         }
+        else
+            text_line.text = sentences[current_line];
+
     }
 
     public void ActivateTextBox(TextAsset passedtextFile, bool pickUp, GameObject passedItemButton, GameObject passedInteractable)
@@ -67,7 +62,6 @@ public class TextManager : MonoBehaviour {
                 text_line.text = sentences[current_line];
                 is_active = true;
             }
-            ignoreFirstPress = true;
             isItemPickup = pickUp;
             EnableTextBox();
         }

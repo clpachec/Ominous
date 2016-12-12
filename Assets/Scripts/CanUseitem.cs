@@ -31,7 +31,6 @@ public class CanUseitem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("enter");
         if (other.gameObject.tag == "Player")
         {
             canUseItem = true;
